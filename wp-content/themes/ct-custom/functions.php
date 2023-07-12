@@ -165,3 +165,16 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 if ( class_exists( 'WooCommerce' ) ) {
 	require get_template_directory() . '/inc/woocommerce.php';
 }
+
+/**
+ * Enqueue custom scripts and styles.
+ */
+function coalition_test_custom_scripts() {
+    wp_enqueue_style( 'coalition-test-custom-style', get_template_directory_uri() . '/css/custom.css' );
+}
+add_action( 'wp_enqueue_scripts', 'coalition_test_custom_scripts' );
+
+/**
+ * Disable Gutenberg editor.
+ */
+add_filter('use_block_editor_for_post', '__return_false', 10);

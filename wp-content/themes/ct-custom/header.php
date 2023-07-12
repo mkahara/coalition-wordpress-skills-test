@@ -25,34 +25,47 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'ct-custom' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$ct_custom_description = get_bloginfo( 'description', 'display' );
-			if ( $ct_custom_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $ct_custom_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
+        <!-- Introduce hello bar -->
+        <div class="header-top">
+            <div class="container">
+                <p class="content-left">CALL US NOW!<span class="white">385.154.11.28.35</span></p>
+                <p class="content-right">LOGIN<span class="white">SIGNUP</span></p>
+            </div>
+        </div>
 
-		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ct-custom' ); ?></button>
-			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
-			?>
-		</nav><!-- #site-navigation -->
+        <div class="header-bottom">
+            <div class="container">
+                <div class="site-branding">
+                    <?php
+                    the_custom_logo();
+                    if ( is_front_page() && is_home() ) :
+                        ?>
+                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                    <?php
+                    else :
+                        ?>
+                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
+                    <?php
+                    endif;
+                    $ct_custom_description = get_bloginfo( 'description', 'display' );
+                    if ( $ct_custom_description || is_customize_preview() ) :
+                        ?>
+                        <p class="site-description"><?php echo $ct_custom_description; /* WPCS: xss ok. */ ?></p>
+                    <?php endif; ?>
+                </div><!-- .site-branding -->
+
+                <nav id="site-navigation" class="main-navigation">
+                    <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'ct-custom' ); ?></button>
+                    <?php
+                    wp_nav_menu( array(
+                        'theme_location' => 'menu-1',
+                        'menu_id'        => 'primary-menu',
+                    ) );
+                    ?>
+                </nav><!-- #site-navigation -->
+            </div>
+        </div>
+
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">

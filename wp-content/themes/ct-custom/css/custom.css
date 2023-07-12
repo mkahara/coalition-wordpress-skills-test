@@ -1,0 +1,148 @@
+/*---Custom Styles---*/
+@font-face {
+    font-family: Bebas;
+    src: url("../fonts/BebasNeue-Regular.woff2");
+}
+@font-face {
+    font-family: UbuntuRegular;
+    src: url("../fonts/Ubuntu-Regular.woff2");
+}
+@font-face {
+    font-family: UbuntuBold;
+    src: url("../fonts/Ubuntu-Bold.woff2");
+}
+@font-face {
+    font-family: MyriadProRegular;
+    src: url("../fonts/MyriadPro-Regular.woff2");
+}
+@font-face {
+    font-family: MyriadProBold;
+    src: url("../fonts/MyriadPro-Bold.woff2");
+}
+html, body {
+    max-height: 756px;
+}
+p {
+    margin: unset;
+}
+
+.container, #content, .site-info {
+    max-width: 960px;
+    margin-inline: auto;
+}
+
+.header-top {
+    background: #ff6200;
+}
+.header-top .container, .header-bottom .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header-top .container {
+    height: 34px;
+}
+.header-top p {
+    color: #be3600;
+}
+.header-top p, .site-title {
+    font-family: Bebas, sans-serif;
+}
+
+.header-top .content-left {
+    font-size: 14.77px;
+    line-height: 18.65px;
+    float: left;
+}
+
+.header-top .content-right {
+    font-size: 14.62px;
+    line-height: 18.46px;
+    float: right;
+}
+.content-left .white {
+    margin-left: 8px;
+}
+.content-right .white {
+    margin-left: 11px;
+}
+.white {
+    color: #fff;
+}
+.site-title {
+    font-size: 41.13px;
+    line-height: 51.91px;
+}
+.site-title a {
+    text-decoration: none;
+}
+.header-bottom .container {
+    height: 109px;
+}
+.header-bottom {
+    background-color: #f9f9f9;
+}
+.main-navigation {
+    max-width: 684.01px;
+    display: flex;
+    justify-content: flex-end;
+}
+.main-navigation a {
+    font-size: 13px;
+    line-height: normal;
+    color: #333333;
+    font-family: Opensans, sans-serif;
+    text-decoration: none;
+    position: relative;
+}
+.main-navigation a:hover {
+    font-weight: bold;
+}
+.main-navigation li {
+    margin-right: 26px;
+}
+.main-navigation a::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #ff6102;
+    transform: scaleX(0);
+    transition: transform 0.2s ease-in-out;
+}
+.main-navigation a:hover::after {
+    transform: scaleX(1); /* Show the line on hover */
+}
+.main-navigation .sub-menu a::after {
+    display: none;
+}
+.main-navigation ul ul {
+    box-shadow: unset;
+    float: left;
+    position: absolute;
+    z-index: 99999;
+    border: solid 1px #9a9b9b;
+    margin-top: 24px;
+    padding: 17px 14px;
+}
+.main-navigation ul ul li {
+    margin-right: unset;
+}
+.main-navigation ul ul a {
+    width: max-content;
+    font-size: 12px;
+    line-height: 24.65px;
+}
+.main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
+    left: -30px;
+}
+.main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
+    left: 120%;
+    margin-top: -18px;
+}
+.breadcrumbs {
+    font-size: 14px;
+    line-height: 24.65px;
+}
