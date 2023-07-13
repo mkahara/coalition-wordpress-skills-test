@@ -8,7 +8,14 @@
  *
  * @package CT_Custom
  */
+// Get the theme settings
+$theme_settings = get_option('theme_settings');
 
+// Phone number
+$phone_number = $theme_settings['phone_number'] ?? '';
+
+// Logo image
+$logo_image = $theme_settings['logo_image'] ?? '';
 ?>
 <!doctype html>
 <html <?php language_attributes(); ?>>
@@ -28,7 +35,7 @@
         <!-- Introduce hello bar -->
         <div class="header-top">
             <div class="container">
-                <p class="content-left">CALL US NOW!<span class="white">385.154.11.28.35</span></p>
+                <p class="content-left">CALL US NOW!<span class="white"><?php echo $phone_number; ?></span></p>
                 <p class="content-right">LOGIN<span class="white">SIGNUP</span></p>
             </div>
         </div>
@@ -36,22 +43,10 @@
         <div class="header-bottom">
             <div class="container">
                 <div class="site-branding">
-                    <?php
-                    the_custom_logo();
-                    if ( is_front_page() && is_home() ) :
-                        ?>
-                        <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                    <?php
-                    else :
-                        ?>
-                        <p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-                    <?php
-                    endif;
-                    $ct_custom_description = get_bloginfo( 'description', 'display' );
-                    if ( $ct_custom_description || is_customize_preview() ) :
-                        ?>
-                        <p class="site-description"><?php echo $ct_custom_description; /* WPCS: xss ok. */ ?></p>
-                    <?php endif; ?>
+                    <a href="<?php echo site_url(); ?>">
+                        <img src="<?php echo esc_url($logo_image); ?>" class="custom-logo" alt="<?php echo bloginfo('name'); ?>" decoding="async">
+                    </a>
+
                 </div><!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation">

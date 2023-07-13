@@ -3,27 +3,42 @@
     font-family: Bebas;
     src: url("../fonts/BebasNeue-Regular.woff2");
 }
+
 @font-face {
     font-family: UbuntuRegular;
     src: url("../fonts/Ubuntu-Regular.woff2");
 }
+
+@font-face {
+    font-family: UbuntuLight;
+    src: url("../fonts/Ubuntu-Light.woff2");
+}
+
 @font-face {
     font-family: UbuntuBold;
     src: url("../fonts/Ubuntu-Bold.woff2");
 }
+
 @font-face {
     font-family: MyriadProRegular;
     src: url("../fonts/MyriadPro-Regular.woff2");
 }
+
 @font-face {
     font-family: MyriadProBold;
     src: url("../fonts/MyriadPro-Bold.woff2");
 }
+
 html, body {
     max-height: 756px;
 }
+
 p {
     margin: unset;
+}
+
+footer.entry-footer {
+    display: none;
 }
 
 .container, #content, .site-info {
@@ -31,20 +46,28 @@ p {
     margin-inline: auto;
 }
 
+.home .site-main {
+    min-height: 600px;
+}
+
 .header-top {
     background: #ff6200;
 }
+
 .header-top .container, .header-bottom .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
+
 .header-top .container {
     height: 34px;
 }
+
 .header-top p {
     color: #be3600;
 }
+
 .header-top p, .site-title {
     font-family: Bebas, sans-serif;
 }
@@ -60,47 +83,59 @@ p {
     line-height: 18.46px;
     float: right;
 }
+
 .content-left .white {
     margin-left: 8px;
 }
+
 .content-right .white {
     margin-left: 11px;
 }
+
 .white {
     color: #fff;
 }
+
 .site-title {
     font-size: 41.13px;
     line-height: 51.91px;
 }
+
 .site-title a {
     text-decoration: none;
 }
+
 .header-bottom .container {
     height: 109px;
 }
+
 .header-bottom {
     background-color: #f9f9f9;
 }
+
 .main-navigation {
     max-width: 684.01px;
     display: flex;
     justify-content: flex-end;
 }
+
 .main-navigation a {
     font-size: 13px;
     line-height: normal;
     color: #333333;
-    font-family: Opensans, sans-serif;
+    font-family: MyriadProRegular;
     text-decoration: none;
     position: relative;
 }
-.main-navigation a:hover {
-    font-weight: bold;
+
+.main-navigation li:hover > a, a[aria-current="page"] {
+    font-family: MyriadProBold;
 }
+
 .main-navigation li {
     margin-right: 26px;
 }
+
 .main-navigation a::after {
     content: '';
     position: absolute;
@@ -112,37 +147,237 @@ p {
     transform: scaleX(0);
     transition: transform 0.2s ease-in-out;
 }
-.main-navigation a:hover::after {
+
+.main-navigation li:hover a::after, a[aria-current="page"]::after {
     transform: scaleX(1); /* Show the line on hover */
 }
+
 .main-navigation .sub-menu a::after {
     display: none;
 }
+
+.main-navigation li {
+    padding: 20px 0;
+}
+
+.main-navigation .sub-menu li {
+    padding: unset;
+    padding-inline: 14px;
+}
+
 .main-navigation ul ul {
     box-shadow: unset;
     float: left;
     position: absolute;
     z-index: 99999;
     border: solid 1px #9a9b9b;
-    margin-top: 24px;
-    padding: 17px 14px;
+    padding: 14px 0;
+    background: #fff;
 }
+
 .main-navigation ul ul li {
     margin-right: unset;
 }
+
 .main-navigation ul ul a {
     width: max-content;
     font-size: 12px;
     line-height: 24.65px;
+    font-family: Opensans;
 }
+
+.main-navigation .sub-menu li:hover a {
+    font-family: inherit;
+    font-weight: bold;
+}
+
+.sub-menu .sub-menu li a {
+    font-weight: initial !important;
+}
+
+.sub-menu .sub-menu li:hover a {
+    font-weight: bold !important;
+}
+
 .main-navigation ul li:hover > ul, .main-navigation ul li.focus > ul {
     left: -30px;
 }
+
 .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul {
-    left: 120%;
-    margin-top: -18px;
+    left: 100%;
+    margin-top: -15px;
 }
+
 .breadcrumbs {
     font-size: 14px;
     line-height: 24.65px;
+    font-family: UbuntuBold;
+    padding-top: 47px;
+    padding-bottom: 45px;
+}
+
+.breadcrumbs a, .breadcrumbs .separator {
+    font-family: UbuntuRegular;
+    text-decoration: none;
+    color: #929292;
+}
+
+.page-content, .entry-content, .entry-summary {
+    margin: unset;
+}
+
+.page-title {
+    font-size: 26.96px;
+    line-height: 19.54px;
+    color: #ff6102;
+    margin: unset;
+    font-family: Opensans;
+}
+
+.page-description {
+    font-size: 14px;
+    line-height: 19px;
+    font-family: 'UbuntuRegular';
+    margin-top: 15px;
+    color: #878787;
+}
+
+.form-details-section h3 {
+    margin: unset;
+    color: #ff6200;
+    font-size: 23px;
+    line-height: 24.65px;
+    font-weight: normal;
+    font-family: Opensans;
+}
+
+.form-details-section {
+    margin-top: 58px;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+}
+
+.form-column {
+    width: 470px;
+}
+
+hr {
+    height: 6px;
+    margin-top: 13px;
+    margin-bottom: 19px;
+    background-color: #525252;
+}
+
+.details-column {
+    width: 410px;
+}
+
+.details-column h6, .details-column p {
+    font-family: 'MyriadProRegular';
+    color: #595959;
+}
+
+.details-column h6 {
+    font-size: 16px;
+    margin: unset;
+    line-height: 16px;
+    margin-bottom: 12px;
+}
+
+.details-column p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.address {
+    margin-bottom: 19px;
+}
+
+.form-row {
+    margin-bottom: 10px;
+}
+
+.two-cols {
+    display: flex;
+}
+
+.form-col {
+    flex: 1;
+    margin-right: 10px;
+}
+
+.form-col:last-child {
+    margin-right: 0;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: 100%;
+    padding: 5px;
+    color: #878787 !important;
+    font-family: UbuntuLight;
+    border: solid 1px #ededed;
+    border-radius: unset;
+    font-size: 14px;
+    line-height: 24.65px;
+    background: #f6f6f6;
+}
+
+textarea {
+    height: 110px;
+}
+
+.form-row button {
+    background: #ff6102;
+    border: none;
+    border-radius: unset;
+    text-transform: uppercase;
+    color: #fff;
+    font-size: 13.04px;
+    line-height: normal;
+    font-family: Opensans;
+    font-weight: 600;
+    padding: 14px 23px 14px 25px;
+    margin-top: 5px;
+}
+
+.fab {
+    color: #fff;
+}
+
+.social-icons {
+    display: flex;
+    margin-top: 60px;
+}
+
+.social-icons a {
+    width: 32px;
+    height: 32px;
+    background: #d0d0d0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-right: 5px;
+}
+
+.social-icons a:hover {
+    background: #363636;
+}
+
+footer {
+    background: #525252;
+    color: #fff;
+    padding: 5px 0;
+}
+
+.site-info {
+    font-family: 'UbuntuRegular';
+    font-size: 14px;
+}
+
+.site-info a {
+    color: #ff6102;
 }
