@@ -33,3 +33,6 @@ Converting a PSD design to a WordPress Template
 3. I also implemented the menu effect to show the current page which the user is in.
 4. Added a footer to mark the end of the page
 5. The database is named coalitiontest.sql and its in the root of the project.
+6. I have also created a Github repository here https://github.com/mkahara/coalition-wordpress-skills-test and created a Pull Request whereby you can view the code here https://github.com/mkahara/coalition-wordpress-skills-test/pull/1.
+
+### Thank you.
